@@ -3,7 +3,6 @@ const themeToggle = document.getElementById('slider');
 
 function toggleTheme() {
     const isDarkMode = themeToggle.checked;
-    console.log('Toggle Theme:', isDarkMode ? 'dark-theme' : 'light-theme');
     document.body.classList.toggle('dark-theme', isDarkMode);
     updateSocialIcons(isDarkMode);
     localStorage.setItem('theme', isDarkMode ? 'dark-theme' : 'light-theme');
@@ -17,7 +16,6 @@ function updateSocialIcons(isDarkMode) {
 
 function checkTheme() {
     const savedTheme = localStorage.getItem('theme');
-    console.log('Saved Theme from localStorage:', savedTheme);
     if (savedTheme) {
         document.body.classList.add(savedTheme);
         themeToggle.checked = savedTheme === 'dark-theme';
